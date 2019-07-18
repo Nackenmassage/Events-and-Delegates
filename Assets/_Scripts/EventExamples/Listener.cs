@@ -15,6 +15,7 @@ public class Listener : MonoBehaviour
         broadcaster.GetComponent<StandardEventPatternExample>().SpacePressed2 += OnSpacePressed2;
         broadcaster.GetComponent<StandardEventPatternExample>().SpacePressed3 += OnSpacePressed3;
         broadcaster.GetComponent<QuickEventExample>().OnLShiftDown += OnLeftShiftDown;
+        broadcaster.GetComponent<QuickEventExample>().PDown += OnPDown;
     }
 
     void OnDisable()
@@ -24,6 +25,8 @@ public class Listener : MonoBehaviour
         broadcaster.GetComponent<StandardEventPatternExample>().SpacePressed2 -= OnSpacePressed2;
         broadcaster.GetComponent<StandardEventPatternExample>().SpacePressed3 -= OnSpacePressed3;
         broadcaster.GetComponent<QuickEventExample>().OnLShiftDown -= OnLeftShiftDown;
+        broadcaster.GetComponent<QuickEventExample>().PDown -= OnPDown;
+
     }
 
     void OnSpacePressed1(object sender, SpacePressedEventArgs e)
@@ -46,4 +49,8 @@ public class Listener : MonoBehaviour
         textMesh.text += "Left Shift was pressed.\n";
     }
 
+    void OnPDown(int whatever, float whatelse)
+    {
+        textMesh.text += "Left Shift was pressed.\n";
+    }
 }
